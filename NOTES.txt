@@ -24,6 +24,7 @@ we can run `docker images` to list all images.
 
 we can run `docker build -t:1.0 [LOCATION OF DOCKERFILE]` to build an image,
 `-t` stands for the name which will be the image name `1.0` is a version we can specify
+location of the docker file used for configurations, `.` in the same directory
 ? --
 
 -- ?

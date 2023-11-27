@@ -1,0 +1,45 @@
+-- ?
+we can run `docker pull [IMAGE NAME]` to pull and image from the docker hub then,
+we can run `docker run [IMAGE NAME]` to run the downloaded image in a container.
+OR:
+we can run `docker run [IMAGE NAME]` to run a certain container, if we dont have it the image locally, docker will pull it first then run it. 
+
+we can run `docker run -d` to run the container in the background of the terminal.
+
+we can run `docer logs [CONTAINER NAME/ID]` to print the logs of a certain running container.
+
+we can run `docker run -p[PORT NUMBER TO BIND]:[THE IMAGE PORT NUMBER]` to bind a port to our machine so we can view the container running in the browser.
+
+we can run `docker run --name` to give the container a certain name since docker will generate a random name if we dont specify it.
+
+we can run `docker ps` to list only running containers.
+
+we can run `docker ps -a` to list all containers.
+
+we can run `docker start [CONTAINER NAME/ID]` to start an existing container without creating a new one. 
+
+we can run `docker stop [CONTAINER NAME/ID]` to stop a running container.
+
+we can run `docker images` to list all images.
+
+we can run `docker build -t:1.0 [LOCATION OF DOCKERFILE]` to build an image,
+`-t` stands for the name which will be the image name `1.0` is a version we can specify
+? --
+
+-- ?
+** We select whatever dependencies we have in our app that should be present in the container **
+FROM node:21-alpine3.17
+
+** using COPY we can add files and folders in the container **
+COPY package.json /app/ 
+COPY src /app/
+
+** WORKDIR statment is for changing directory, like cd. **
+** So we have to change directory into the /app/ directry before running npm install **
+WORKDIR /app
+
+RUN npm install
+
+** if the command is the last command **
+CMD ["node", "server.js"]
+? --
